@@ -98,6 +98,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@goldgarageotomotiv" },
+      { property: "og:title", content: "Gold Garage | Boyasız Oto Göçük Düzeltme ve PPF Kaplama" },
+      { name: "twitter:title", content: "Gold Garage | Boyasız Oto Göçük Düzeltme ve PPF Kaplama" },
+      { name: "description", content: "Gold Garage offers professional paintless dent repair and PPF vehicle protection services." },
+      { property: "og:description", content: "Gold Garage offers professional paintless dent repair and PPF vehicle protection services." },
+      { name: "twitter:description", content: "Gold Garage offers professional paintless dent repair and PPF vehicle protection services." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3e986ffc-6e38-45db-9111-be5aa14e3b9a/id-preview-4c7bb928--3673b32b-cbe3-42a5-a1c2-486b5f80cd45.lovable.app-1782233237831.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3e986ffc-6e38-45db-9111-be5aa14e3b9a/id-preview-4c7bb928--3673b32b-cbe3-42a5-a1c2-486b5f80cd45.lovable.app-1782233237831.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
