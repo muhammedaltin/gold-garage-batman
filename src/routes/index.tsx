@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
 import {
   Shield,
   Wrench,
@@ -9,15 +8,28 @@ import {
   Phone,
   Clock,
   Award,
-  Instagram,
   CheckCircle2,
+  Navigation,
+  MessageSquare,
 } from "lucide-react";
 import { WhatsAppIcon, WHATSAPP_URL } from "@/components/whatsapp-button";
 import heroGarage from "@/assets/hero-garage.jpg";
 import servicePpf from "@/assets/service-ppf.jpg";
 
-const googleMapsUrl =
-  "https://www.google.com/maps/search/?api=1&query=G%C3%BCltepe%20Mahallesi%2C%20Yeni%20Sanayi%20Sitesi%2015.%20Sokak%20No%3A%20J%2F18%2C%20Batman";
+const googleMapsUrl = "https://maps.app.goo.gl/ivWAJAPDKmbppx1o6";
+const googleReviewsUrl =
+  "https://www.google.com/search?sca_esv=4995decb4bdc4888&cs=1&uds=AJ5uw1_a2D0D09lxm8gpKKOTUn4r_ma7KZ9Utblj5_vcj4acKBZsAwmh6EGQxLDxpzE8aM6BPyS08JSQKfgLLjAIJPeh7-0iiKfno3uL0brydZFhavBrKbDLOJpZY2GraPSAttfQkVxnZP29rFMNEKg3WUaSeyCVJ8K1JTaauYnDJPFE61l5v8XGacL6ERx4XIc45e-umgUvLFeXxMlGPa3_9N_1LfG7GqKsz3u82hlSUp8wqFDoUpY&q=gold+garage+boyasiz+göçük+onarim+araç+kaplama+ve+araç+dönüşüm+merkezi̇+reviews&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-__B60YPb779Iwx73c_eI9kXXj5NQ5JX4Nj4eba4XayiqIlDlrR_FHcGsTt34ORxg8IaRpffE8GDVtoYZaVDUGPuOZ-xaOg1uXyRpV4A_oXadAvF-sb239iastPCvoEO5zGIjUbeOapzJtLGtk4qpuMZPM2191OZGX8xhV70JybhMdPAKHMnJqNvkF9KlEXd9PtkgI58%3D&hl=en-TR&sa=X&ved=2ahUKEwiNuKisoqiVAxXkVvEDHbybCKoQ_4MLegQIERAO&biw=375&bih=725&dpr=3.25&zx=1782592464633";
+
+const phoneHref = "tel:+905522990672";
+
+const primaryButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3 text-base font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring";
+
+const outlineGoldButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-md border border-gold bg-transparent px-6 py-3 text-base font-medium text-gold shadow-sm transition-colors hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring";
+
+const whatsappButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-md bg-whatsapp px-6 py-3 text-base font-medium text-whatsapp-foreground shadow transition-colors hover:bg-whatsapp/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -110,15 +122,13 @@ function Index() {
               ve modifikasyon hizmetleri.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button asChild size="lg" className="text-base">
-                <a href="tel:+905522990672" className="inline-flex items-center gap-2">
-                  <Phone className="size-5" />
-                  Hemen Ara
-                </a>
-              </Button>
-              <Button asChild variant="gold-outline" size="lg" className="text-base">
-                <a href="#hizmetler">Hizmetlerimizi Keşfet</a>
-              </Button>
+              <a href={phoneHref} className={primaryButtonClass}>
+                <Phone className="size-5" />
+                Hemen Ara
+              </a>
+              <a href="#hizmetler" className={outlineGoldButtonClass}>
+                Hizmetlerimizi Keşfet
+              </a>
             </div>
           </div>
         </div>
@@ -193,10 +203,20 @@ function Index() {
                   <div className="font-display text-3xl font-bold text-gold">10+</div>
                   <div className="mt-1 text-xs text-muted-foreground">Yıllık Deneyim</div>
                 </div>
-                <div>
-                  <div className="font-display text-3xl font-bold text-gold">1000+</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Mutlu Müşteri</div>
-                </div>
+                <a
+                  href={googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-colors hover:text-gold"
+                >
+                  <div className="font-display text-3xl font-bold text-gold group-hover:text-gold/80">
+                    100+
+                  </div>
+                  <div className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
+                    <MessageSquare className="size-3" />
+                    Mutlu Müşteri (Google Yorumları)
+                  </div>
+                </a>
               </div>
             </div>
           </div>
@@ -215,38 +235,18 @@ function Index() {
             başlayın.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
-            <Button asChild size="lg" className="text-base">
-              <a href="tel:+905522990672" className="inline-flex items-center gap-2">
-                <Phone className="size-5" />
-                +90 552 299 06 72
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="text-base bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90"
-            >
-              <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <WhatsAppIcon className="size-5" />
-                WhatsApp'tan Yaz
-              </a>
-            </Button>
-            <Button asChild variant="gold-outline" size="lg" className="text-base">
-              <a
-                href="https://www.instagram.com/goldgarageotomotiv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <Instagram className="size-5" />
-                Instagram'dan Takip Et
-              </a>
-            </Button>
+            <a href={phoneHref} className={primaryButtonClass}>
+              <Phone className="size-5" />
+              +90 552 299 06 72
+            </a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={whatsappButtonClass}>
+              <WhatsAppIcon className="size-5" />
+              WhatsApp'tan Yaz
+            </a>
+            <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className={outlineGoldButtonClass}>
+              <Navigation className="size-5" />
+              Yol Tarifi Al
+            </a>
           </div>
           <div className="mt-10 inline-flex flex-col items-start gap-2 rounded-xl border border-border bg-card p-6 text-left sm:flex-row sm:items-center sm:gap-8">
             <a
