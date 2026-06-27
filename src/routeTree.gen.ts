@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as BatmanPpfKaplamaDothtmlRouteImport } from './routes/Batman-ppf-kaplama[.]html'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
 
+const BatmanPpfKaplamaDothtmlRoute = BatmanPpfKaplamaDothtmlRouteImport.update({
+  id: '/Batman-ppf-kaplama.html',
+  path: '/Batman-ppf-kaplama.html',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,32 +31,43 @@ const SitemapXmlRoute = SitemapXmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/sitemap/xml'
+  fullPaths: '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/sitemap/xml'
-  id: '__root__' | '/' | '/sitemap/xml'
+  to: '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
+  id: '__root__' | '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BatmanPpfKaplamaDothtmlRoute: typeof BatmanPpfKaplamaDothtmlRoute
   SitemapXmlRoute: typeof SitemapXmlRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/Batman-ppf-kaplama.html': {
+      id: '/Batman-ppf-kaplama.html'
+      path: '/Batman-ppf-kaplama.html'
+      fullPath: '/Batman-ppf-kaplama.html'
+      preLoaderRoute: typeof BatmanPpfKaplamaDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BatmanPpfKaplamaDothtmlRoute: BatmanPpfKaplamaDothtmlRoute,
   SitemapXmlRoute: SitemapXmlRoute,
 }
 export const routeTree = rootRouteImport
