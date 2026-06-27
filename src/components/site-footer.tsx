@@ -1,4 +1,9 @@
-import { MapPin, Phone, Clock, Instagram } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MessageSquare } from "lucide-react";
+
+const googleMapsUrl = "https://maps.app.goo.gl/ivWAJAPDKmbppx1o6";
+const googleReviewsUrl =
+  "https://www.google.com/search?sca_esv=4995decb4bdc4888&cs=1&uds=AJ5uw1_a2D0D09lxm8gpKKOTUn4r_ma7KZ9Utblj5_vcj4acKBZsAwmh6EGQxLDxpzE8aM6BPyS08JSQKfgLLjAIJPeh7-0iiKfno3uL0brydZFhavBrKbDLOJpZY2GraPSAttfQkVxnZP29rFMNEKg3WUaSeyCVJ8K1JTaauYnDJPFE61l5v8XGacL6ERx4XIc45e-umgUvLFeXxMlGPa3_9N_1LfG7GqKsz3u82hlSUp8wqFDoUpY&q=gold+garage+boyasiz+göçük+onarim+araç+kaplama+ve+araç+dönüşüm+merkezi̇+reviews&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-__B60YPb779Iwx73c_eI9kXXj5NQ5JX4Nj4eba4XayiqIlDlrR_FHcGsTt34ORxg8IaRpffE8GDVtoYZaVDUGPuOZ-xaOg1uXyRpV4A_oXadAvF-sb239iastPCvoEO5zGIjUbeOapzJtLGtk4qpuMZPM2191OZGX8xhV70JybhMdPAKHMnJqNvkF9KlEXd9PtkgI58%3D&hl=en-TR&sa=X&ved=2ahUKEwiNuKisoqiVAxXkVvEDHbybCKoQ_4MLegQIERAO&biw=375&bih=725&dpr=3.25&zx=1782592464633";
 
 export function SiteFooter() {
   return (
@@ -21,7 +26,7 @@ export function SiteFooter() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=G%C3%BCltepe%20Mahallesi%2C%20Yeni%20Sanayi%20Sitesi%2015.%20Sokak%20No%3A%20J%2F18%2C%20Batman"
+                  href={googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-gold"
@@ -43,18 +48,33 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h4 className="font-display text-lg font-semibold text-foreground">Sosyal Medya</h4>
-            <div className="mt-4">
-              <a
-                href="https://www.instagram.com/goldgarageotomotiv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-gold"
-              >
-                <Instagram className="size-5" />
-                @goldgarageotomotiv
-              </a>
-            </div>
+            <h4 className="font-display text-lg font-semibold text-foreground">
+              Yol Tarifi & Yorumlar
+            </h4>
+            <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
+              <li>
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                >
+                  <Navigation className="size-4 text-gold" />
+                  Google Maps'te Yol Tarifi Al
+                </a>
+              </li>
+              <li>
+                <a
+                  href={googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 transition-colors hover:text-gold"
+                >
+                  <MessageSquare className="size-4 text-gold" />
+                  Google Yorumlarını Gör
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 

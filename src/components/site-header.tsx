@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
 
 const navLinks = [
   { to: "/", label: "Ana Sayfa" },
@@ -9,6 +8,11 @@ const navLinks = [
   { to: "/#hakkimizda", label: "Hakkımızda" },
   { to: "/#iletisim", label: "İletişim" },
 ];
+
+const phoneHref = "tel:+905522990672";
+
+const phoneButtonClass =
+  "inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring";
 
 export function SiteHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,21 +39,28 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden md:block">
-          <Button asChild variant="default" size="sm">
-            <a href="tel:+905522990672" className="inline-flex items-center gap-2">
-              <Phone className="size-4" />
-              Bize Ulaşın
-            </a>
-          </Button>
+          <a href={phoneHref} className={phoneButtonClass}>
+            <Phone className="size-4" />
+            Bize Ulaşın
+          </a>
         </div>
 
-        <button
-          className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-gold md:hidden"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
-        >
-          {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <a
+            href={phoneHref}
+            aria-label="Telefonla ara"
+            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground transition-colors hover:text-gold"
+          >
+            <Phone className="size-6" />
+          </a>
+          <button
+            className="inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:text-gold"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
+          >
+            {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
@@ -65,15 +76,14 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild variant="default" size="default" className="w-full">
-              <a
-                href="tel:+905522990672"
-                className="inline-flex items-center justify-center gap-2"
-              >
-                <Phone className="size-4" />
-                +90 552 299 06 72
-              </a>
-            </Button>
+            <a
+              href={phoneHref}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              onClick={() => setMobileOpen(false)}
+            >
+              <Phone className="size-4" />
+              +90 552 299 06 72
+            </a>
           </nav>
         </div>
       )}
