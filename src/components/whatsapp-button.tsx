@@ -1,6 +1,4 @@
-import { MessageCircle } from "lucide-react";
-
-const phone = "905522990672";
+export const phone = "905522990672";
 export const WHATSAPP_URL = `https://wa.me/${phone}?text=${encodeURIComponent(
   "Merhaba, Gold Garage hizmetleriniz hakkında bilgi almak istiyorum.",
 )}`;
