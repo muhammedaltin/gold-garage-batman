@@ -279,6 +279,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <TestimonialsMarquee />
     </div>
   );
 }
