@@ -60,12 +60,14 @@ const services = [
     title: "PPF Kaplama",
     description:
       "Şeffaf boya koruma filmi ile aracınızın boyasını çizikler, taş izleri ve dış etkenlere karşı koruyoruz.",
+    href: "/Batman-ppf-kaplama.html",
   },
   {
     icon: Wrench,
     title: "Boyasız Göçük Düzeltme",
     description:
       "Boya işlemi yapmadan, orijinal görünümü bozmadan göçük ve eziklerinizi özel araçlarla düzeltiyoruz.",
+    href: "/Batman-boyasiz-gocuk-duzeltme.html",
   },
   {
     icon: Sun,
