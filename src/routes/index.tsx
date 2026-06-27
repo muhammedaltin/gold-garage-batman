@@ -12,8 +12,12 @@ import {
   Instagram,
   CheckCircle2,
 } from "lucide-react";
+import { WhatsAppIcon, WHATSAPP_URL } from "@/components/whatsapp-button";
 import heroGarage from "@/assets/hero-garage.jpg";
 import servicePpf from "@/assets/service-ppf.jpg";
+
+const googleMapsUrl =
+  "https://www.google.com/maps/search/?api=1&query=G%C3%BCltepe%20Mahallesi%2C%20Yeni%20Sanayi%20Sitesi%2015.%20Sokak%20No%3A%20J%2F18%2C%20Batman";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,8 +68,6 @@ const services = [
       "Araç dönüşüm ve kişiselleştirme işlemleriyle aracınızı hayalinizdeki görünüme kavuşturuyoruz.",
   },
 ];
-
-const locations = ["Batman", "Diyarbakır", "Siirt"];
 
 const features = [
   "Maslak Oto Sanayi eğitimli ustalar",
@@ -186,7 +188,7 @@ function Index() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 grid grid-cols-3 gap-4 border-t border-border/50 pt-8">
+              <div className="mt-10 grid grid-cols-2 gap-4 border-t border-border/50 pt-8">
                 <div>
                   <div className="font-display text-3xl font-bold text-gold">10+</div>
                   <div className="mt-1 text-xs text-muted-foreground">Yıllık Deneyim</div>
@@ -195,40 +197,8 @@ function Index() {
                   <div className="font-display text-3xl font-bold text-gold">1000+</div>
                   <div className="mt-1 text-xs text-muted-foreground">Mutlu Müşteri</div>
                 </div>
-                <div>
-                  <div className="font-display text-3xl font-bold text-gold">3</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Hizmet Verilen İl</div>
-                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Locations */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-              HİZMET VERDİĞİMİZ İLLER
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Batman merkezli olup, çevre illere de profesyonel araç kaplama ve onarım hizmeti
-              sunuyoruz.
-            </p>
-          </div>
-          <div className="mt-12 flex flex-wrap justify-center gap-4">
-            {locations.map((location) => (
-              <div
-                key={location}
-                className="flex items-center gap-3 rounded-full border border-gold/30 bg-gold/5 px-6 py-3 text-gold"
-              >
-                <MapPin className="size-5" />
-                <span className="font-display text-lg font-semibold">
-                  {location} PPF Araç Kaplama
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -244,11 +214,26 @@ function Index() {
             Ücretsiz keşif ve fiyat bilgisi için bizi arayın. Randevu alarak aracınızı korumaya
             başlayın.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-6 sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <Button asChild size="lg" className="text-base">
               <a href="tel:+905522990672" className="inline-flex items-center gap-2">
                 <Phone className="size-5" />
                 +90 552 299 06 72
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="text-base bg-whatsapp text-whatsapp-foreground hover:bg-whatsapp/90"
+            >
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
+              >
+                <WhatsAppIcon className="size-5" />
+                WhatsApp'tan Yaz
               </a>
             </Button>
             <Button asChild variant="gold-outline" size="lg" className="text-base">
@@ -264,12 +249,17 @@ function Index() {
             </Button>
           </div>
           <div className="mt-10 inline-flex flex-col items-start gap-2 rounded-xl border border-border bg-card p-6 text-left sm:flex-row sm:items-center sm:gap-8">
-            <div className="flex items-center gap-3 text-muted-foreground">
+            <a
+              href={googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-gold"
+            >
               <MapPin className="size-5 text-gold" />
               <span className="text-sm">
                 Gültepe Mah. Yeni Sanayi Sitesi 15. Sokak No: J/18, Batman
               </span>
-            </div>
+            </a>
             <div className="flex items-center gap-3 text-muted-foreground">
               <Clock className="size-5 text-gold" />
               <span className="text-sm">Pzt - Cmt: 09:00 - 19:00</span>

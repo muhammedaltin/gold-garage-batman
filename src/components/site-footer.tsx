@@ -20,7 +20,14 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
-                <span>Gültepe Mahallesi, Yeni Sanayi Sitesi 15. Sokak No: J/18, Batman</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=G%C3%BCltepe%20Mahallesi%2C%20Yeni%20Sanayi%20Sitesi%2015.%20Sokak%20No%3A%20J%2F18%2C%20Batman"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold"
+                >
+                  Gültepe Mahallesi, Yeni Sanayi Sitesi 15. Sokak No: J/18, Batman
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="size-4 shrink-0 text-gold" />
