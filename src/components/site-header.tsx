@@ -67,14 +67,14 @@ export function SiteHeader() {
         <div className="border-t border-border/50 bg-background px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
+              <a
+                key={link.href}
+                href={link.href}
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-gold"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href={phoneHref}
