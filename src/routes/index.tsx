@@ -13,6 +13,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { WhatsAppIcon, WHATSAPP_URL } from "@/components/whatsapp-button";
+import { TestimonialsMarquee } from "@/components/testimonials-marquee";
 import heroGarage from "@/assets/hero-garage.jpg";
 import servicePpf from "@/assets/service-ppf.jpg";
 
@@ -210,8 +211,9 @@ function Index() {
               </ul>
               <div className="mt-10 grid grid-cols-2 gap-4 border-t border-border/50 pt-8">
                 <div>
-                  <div className="font-display text-3xl font-bold text-gold">10+</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Yıllık Deneyim</div>
+                  <div className="font-display text-3xl font-bold text-gold">5+</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Yıl Deneyim</div>
+
                 </div>
                 <a
                   href={googleReviewsUrl}
@@ -238,7 +240,7 @@ function Index() {
         <div className="absolute inset-0 bg-gold-gradient opacity-10" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-            ARACINIZI ELLERİMİZE BIRAKIN
+            ARACINIZI USTA ELLERİMİZE BIRAKIN
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ücretsiz keşif ve fiyat bilgisi için bizi arayın. Randevu alarak aracınızı korumaya
@@ -277,6 +279,8 @@ function Index() {
           </div>
         </div>
       </section>
+
+      <TestimonialsMarquee />
     </div>
   );
 }
