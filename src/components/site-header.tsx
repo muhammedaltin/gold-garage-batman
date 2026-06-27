@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { to: "/", label: "Ana Sayfa" },
-  { to: "/#hizmetler", label: "Hizmetlerimiz" },
-  { to: "/#hakkimizda", label: "Hakkımızda" },
-  { to: "/#iletisim", label: "İletişim" },
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/#hizmetler", label: "Hizmetlerimiz" },
+  { href: "/#hakkimizda", label: "Hakkımızda" },
+  { href: "/#iletisim", label: "İletişim" },
 ];
 
 const phoneHref = "tel:+905522990672";
