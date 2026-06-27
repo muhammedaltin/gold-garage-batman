@@ -2,9 +2,14 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 
+const servicePages = [
+  { href: "/Batman-ppf-kaplama.html", label: "Batman PPF Kaplama" },
+  { href: "/Batman-boyasiz-gocuk-duzeltme.html", label: "Batman Boyasız Göçük Düzeltme" },
+];
+
 const navLinks = [
   { href: "/", label: "Ana Sayfa" },
-  { href: "/#hizmetler", label: "Hizmetlerimiz" },
+  { href: "/#hizmetler", label: "Hizmetlerimiz", children: servicePages },
   { href: "/#hakkimizda", label: "Hakkımızda" },
   { href: "/#iletisim", label: "İletişim" },
 ];
