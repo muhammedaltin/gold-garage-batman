@@ -13,6 +13,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { WhatsAppIcon, WHATSAPP_URL } from "@/components/whatsapp-button";
+import { TestimonialsMarquee } from "@/components/testimonials-marquee";
 import heroGarage from "@/assets/hero-garage.jpg";
 import servicePpf from "@/assets/service-ppf.jpg";
 
