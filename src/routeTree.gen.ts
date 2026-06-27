@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as BatmanPpfKaplamaDothtmlRouteImport } from './routes/Batman-ppf-kaplama[.]html'
+import { Route as BatmanBoyasizGocukDuzeltmeDothtmlRouteImport } from './routes/Batman-boyasiz-gocuk-duzeltme[.]html'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SitemapXmlRouteImport } from './routes/sitemap.xml'
 
@@ -18,6 +19,12 @@ const BatmanPpfKaplamaDothtmlRoute = BatmanPpfKaplamaDothtmlRouteImport.update({
   path: '/Batman-ppf-kaplama.html',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BatmanBoyasizGocukDuzeltmeDothtmlRoute =
+  BatmanBoyasizGocukDuzeltmeDothtmlRouteImport.update({
+    id: '/Batman-boyasiz-gocuk-duzeltme.html',
+    path: '/Batman-boyasiz-gocuk-duzeltme.html',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +38,47 @@ const SitemapXmlRoute = SitemapXmlRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Batman-boyasiz-gocuk-duzeltme.html': typeof BatmanBoyasizGocukDuzeltmeDothtmlRoute
   '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Batman-boyasiz-gocuk-duzeltme.html': typeof BatmanBoyasizGocukDuzeltmeDothtmlRoute
   '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/Batman-boyasiz-gocuk-duzeltme.html': typeof BatmanBoyasizGocukDuzeltmeDothtmlRoute
   '/Batman-ppf-kaplama.html': typeof BatmanPpfKaplamaDothtmlRoute
   '/sitemap/xml': typeof SitemapXmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
+  fullPaths:
+    | '/'
+    | '/Batman-boyasiz-gocuk-duzeltme.html'
+    | '/Batman-ppf-kaplama.html'
+    | '/sitemap/xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
-  id: '__root__' | '/' | '/Batman-ppf-kaplama.html' | '/sitemap/xml'
+  to:
+    | '/'
+    | '/Batman-boyasiz-gocuk-duzeltme.html'
+    | '/Batman-ppf-kaplama.html'
+    | '/sitemap/xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/Batman-boyasiz-gocuk-duzeltme.html'
+    | '/Batman-ppf-kaplama.html'
+    | '/sitemap/xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BatmanBoyasizGocukDuzeltmeDothtmlRoute: typeof BatmanBoyasizGocukDuzeltmeDothtmlRoute
   BatmanPpfKaplamaDothtmlRoute: typeof BatmanPpfKaplamaDothtmlRoute
   SitemapXmlRoute: typeof SitemapXmlRoute
 }
@@ -66,6 +90,13 @@ declare module '@tanstack/react-router' {
       path: '/Batman-ppf-kaplama.html'
       fullPath: '/Batman-ppf-kaplama.html'
       preLoaderRoute: typeof BatmanPpfKaplamaDothtmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/Batman-boyasiz-gocuk-duzeltme.html': {
+      id: '/Batman-boyasiz-gocuk-duzeltme.html'
+      path: '/Batman-boyasiz-gocuk-duzeltme.html'
+      fullPath: '/Batman-boyasiz-gocuk-duzeltme.html'
+      preLoaderRoute: typeof BatmanBoyasizGocukDuzeltmeDothtmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,6 +118,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BatmanBoyasizGocukDuzeltmeDothtmlRoute:
+    BatmanBoyasizGocukDuzeltmeDothtmlRoute,
   BatmanPpfKaplamaDothtmlRoute: BatmanPpfKaplamaDothtmlRoute,
   SitemapXmlRoute: SitemapXmlRoute,
 }
