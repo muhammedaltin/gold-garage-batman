@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { to: "/", label: "Ana Sayfa" },
-  { to: "/#hizmetler", label: "Hizmetlerimiz" },
-  { to: "/#hakkimizda", label: "Hakkımızda" },
-  { to: "/#iletisim", label: "İletişim" },
+  { href: "/", label: "Ana Sayfa" },
+  { href: "/#hizmetler", label: "Hizmetlerimiz" },
+  { href: "/#hakkimizda", label: "Hakkımızda" },
+  { href: "/#iletisim", label: "İletişim" },
 ];
 
 const phoneHref = "tel:+905522990672";
@@ -28,13 +28,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
+            <a
+              key={link.href}
+              href={link.href}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-gold"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
@@ -67,14 +67,14 @@ export function SiteHeader() {
         <div className="border-t border-border/50 bg-background px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.to}
-                to={link.to}
+              <a
+                key={link.href}
+                href={link.href}
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-gold"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
             <a
               href={phoneHref}
