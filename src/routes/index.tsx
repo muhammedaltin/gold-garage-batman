@@ -211,8 +211,9 @@ function Index() {
               </ul>
               <div className="mt-10 grid grid-cols-2 gap-4 border-t border-border/50 pt-8">
                 <div>
-                  <div className="font-display text-3xl font-bold text-gold">10+</div>
-                  <div className="mt-1 text-xs text-muted-foreground">Yıllık Deneyim</div>
+                  <div className="font-display text-3xl font-bold text-gold">5+</div>
+                  <div className="mt-1 text-xs text-muted-foreground">Yıl Deneyim</div>
+
                 </div>
                 <a
                   href={googleReviewsUrl}
