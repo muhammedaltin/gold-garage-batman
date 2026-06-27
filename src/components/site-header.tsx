@@ -2,9 +2,14 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 
+const servicePages = [
+  { href: "/Batman-ppf-kaplama.html", label: "Batman PPF Kaplama" },
+  { href: "/Batman-boyasiz-gocuk-duzeltme.html", label: "Batman Boyasız Göçük Düzeltme" },
+];
+
 const navLinks = [
   { href: "/", label: "Ana Sayfa" },
-  { href: "/#hizmetler", label: "Hizmetlerimiz" },
+  { href: "/#hizmetler", label: "Hizmetlerimiz", children: servicePages },
   { href: "/#hakkimizda", label: "Hakkımızda" },
   { href: "/#iletisim", label: "İletişim" },
 ];
@@ -67,14 +72,29 @@ export function SiteHeader() {
         <div className="border-t border-border/50 bg-background px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-4">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-base font-medium text-muted-foreground transition-colors hover:text-gold"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </a>
+              <div key={link.href} className="flex flex-col gap-2">
+                <a
+                  href={link.href}
+                  className="text-base font-medium text-muted-foreground transition-colors hover:text-gold"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+                {link.children && (
+                  <div className="ml-4 flex flex-col gap-2 border-l border-border/50 pl-4">
+                    {link.children.map((child) => (
+                      <a
+                        key={child.href}
+                        href={child.href}
+                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-gold"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <a
               href={phoneHref}
