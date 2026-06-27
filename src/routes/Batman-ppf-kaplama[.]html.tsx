@@ -7,7 +7,7 @@ const whatsappUrl =
   encodeURIComponent("Batman PPF kaplama fiyat teklifi almak istiyorum.");
 
 const canonical =
-  "https://gold-garage-shine.lovable.app/Batman-ppf-kaplama.html";
+  "https://gold-garage-batman.lovable.app/Batman-ppf-kaplama.html";
 
 export const Route = createFileRoute("/Batman-ppf-kaplama.html")({
   head: () => ({

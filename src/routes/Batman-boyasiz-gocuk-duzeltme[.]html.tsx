@@ -9,7 +9,7 @@ const whatsappUrl =
   );
 
 const canonical =
-  "https://gold-garage-shine.lovable.app/Batman-boyasiz-gocuk-duzeltme.html";
+  "https://gold-garage-batman.lovable.app/Batman-boyasiz-gocuk-duzeltme.html";
 
 export const Route = createFileRoute("/Batman-boyasiz-gocuk-duzeltme.html")({
   head: () => ({
