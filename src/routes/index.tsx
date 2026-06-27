@@ -152,7 +152,7 @@ function Index() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:bg-accent"
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:bg-accent"
               >
                 <div className="inline-flex rounded-lg bg-gold/10 p-3 text-gold">
                   <service.icon className="size-7" />
@@ -163,6 +163,14 @@ function Index() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
+                {service.href && (
+                  <Link
+                    to={service.href}
+                    className="mt-auto pt-5 text-sm font-medium text-gold transition-colors hover:text-gold/80"
+                  >
+                    Detaylı bilgi →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
