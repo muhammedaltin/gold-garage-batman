@@ -240,7 +240,7 @@ function Index() {
         <div className="absolute inset-0 bg-gold-gradient opacity-10" />
         <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl font-bold text-foreground sm:text-4xl">
-            ARACINIZI ELLERİMİZE BIRAKIN
+            ARACINIZI USTA ELLERİMİZE BIRAKIN
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Ücretsiz keşif ve fiyat bilgisi için bizi arayın. Randevu alarak aracınızı korumaya
