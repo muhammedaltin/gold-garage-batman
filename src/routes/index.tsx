@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   Shield,
   Wrench,
@@ -60,12 +60,14 @@ const services = [
     title: "PPF Kaplama",
     description:
       "Şeffaf boya koruma filmi ile aracınızın boyasını çizikler, taş izleri ve dış etkenlere karşı koruyoruz.",
+    href: "/Batman-ppf-kaplama.html",
   },
   {
     icon: Wrench,
     title: "Boyasız Göçük Düzeltme",
     description:
       "Boya işlemi yapmadan, orijinal görünümü bozmadan göçük ve eziklerinizi özel araçlarla düzeltiyoruz.",
+    href: "/Batman-boyasiz-gocuk-duzeltme.html",
   },
   {
     icon: Sun,
@@ -150,7 +152,7 @@ function Index() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="group relative overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:bg-accent"
+                className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card p-6 transition-all hover:border-gold/50 hover:bg-accent"
               >
                 <div className="inline-flex rounded-lg bg-gold/10 p-3 text-gold">
                   <service.icon className="size-7" />
@@ -161,6 +163,14 @@ function Index() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
+                {service.href && (
+                  <Link
+                    to={service.href}
+                    className="mt-auto pt-5 text-sm font-medium text-gold transition-colors hover:text-gold/80"
+                  >
+                    Detaylı bilgi →
+                  </Link>
+                )}
               </div>
             ))}
           </div>
