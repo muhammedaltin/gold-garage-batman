@@ -44,6 +44,8 @@
   --color-gold-foreground: var(--gold-foreground);
   --color-gold-muted: var(--gold-muted);
   --color-gold-glow: var(--gold-glow);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -87,6 +89,8 @@
   --gold-foreground: oklch(0.08 0.01 80);
   --gold-muted: oklch(0.55 0.12 80);
   --gold-glow: oklch(0.75 0.18 80);
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
   --chart-1: oklch(0.65 0.15 80);
   --chart-2: oklch(0.55 0.12 80);
   --chart-3: oklch(0.75 0.18 80);
@@ -127,6 +131,8 @@
   --gold-foreground: oklch(0.06 0.02 80);
   --gold-muted: oklch(0.55 0.12 80);
   --gold-glow: oklch(0.82 0.18 80);
+  --whatsapp: #25d366;
+  --whatsapp-foreground: #ffffff;
   --chart-1: oklch(0.72 0.16 80);
   --chart-2: oklch(0.55 0.12 80);
   --chart-3: oklch(0.82 0.18 80);
